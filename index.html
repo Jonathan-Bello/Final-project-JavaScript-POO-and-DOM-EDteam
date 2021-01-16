@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 - Práctica</title>
+    
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <link rel="stylesheet" href="https://ux.ed.team/css/styles.css?201803301710">
+
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+
+    <div class="ed-grid">
+        <h1>Creación de usuarios</h1>
+    </div>
+
+    <!-- Formulario para agregar usuarios -->
+    <form id="formUsers">
+        <div class="ed-grid m-grid-3">
+            <div class="form-item">
+                <fieldset>
+                    <legend>Tipo de Usuario</legend>
+                    <div class="ed-grid m-grid-3 centralizar">
+
+                        <div class="form-item">
+                            <label>Alumno
+                                <input type="radio" name="userType" id="radioStudent" checked>
+                            </label>
+                        </div>
+
+                        <div class="form-item">
+                            <label>Profesor
+                                <input type="radio" name="userType" id="radioTeacher">
+                            </label>
+                        </div>
+
+                        <div class="form-item">
+                            <label>Activo:
+                                <input type="checkbox" name="userActive">
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-item">
+                    <label>Correo:
+                        <input type="email" name="userEmail">
+                    </label>
+                </div>
+                <div>
+                    <label>Calificación:
+                        <input type="number" name="userRanking" id="userRanking" max="5" min="1" disabled>
+                    </label>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="form-item">
+                    <label>Nombre:
+                        <input type="text" name="userName">
+                    </label>
+                </div>
+
+                <div class="form-item">
+                    <label>Apellidos:
+                        <input type="text" name="userLastName">
+                    </label>
+                </div>
+
+                <div class="form-item m-py-3 centralizar">
+                    <input type="submit" class="button" value="Subir usuario" name="submitUser" id="submitUser">
+                </div>
+            </div>
+
+            <div>
+                <div class="form-item">
+                    <label>Cursos:
+                        <Select name="cursosList" id="cursosList">
+                            <option value="Ninguno">Ninguno</option>
+                        </Select>
+                    </label>
+                </div>
+
+                <div class="ed-grid m-grid-2 m-py-3 centralizar">
+                    <div class="form-item">
+                        <input type="button" class="button--ghost boton-ghost" value="agregar curso"
+                            id="addCursoButton">
+                    </div>
+                    <div class="form-item">
+                        <input type="button" class="button--ghost boton-ghost" value="eliminar curso"
+                            id="deleteCursoButton">
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label for="CursosAsignados">Cursos Asignados:</label>
+                    <textarea name="CursosAsignados" id="CursosAsignados" disabled></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="tabla">
+        <table style="width: 100px;">
+            <colgroup>
+                <col span="6">
+            </colgroup>
+    
+            <!-- Titulo de la tabla -->
+            <caption>USUARIOS</caption>
+    
+            <!-- Encabezados -->
+            <thead>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Activo</th>
+                <th>Tipo</th>
+                <th>Cursos</th>
+                <th>Calificación</th>
+            </thead>
+    
+            <!-- Filas de la tabla -->
+            <tbody id="tablebody" class="fila">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Formulario para cursos -->
+    <div class="ed-grid">
+        <h1>Cursos Fenix</h1>
+    </div>
+    <form id="formCursos">
+        <div class="ed-grid m-grid-4">
+            <div class="form-item">
+                <label>Nombre curso:
+                    <input type="text" name="nombreCurso" required>
+                </label>
+            </div>
+            <div class="form-item">
+                <label>Poster:
+                    <input type="text" name="posterCurso" required>
+                </label>
+            </div>
+            <div class="form-item">
+                <label>Numero de clases:
+                    <input type="number" min="1" name="clasesCurso" required>
+                </label>
+            </div>
+            <div class="form-item  m-py-3">
+                <input class="button" type="submit" value="Subir cursos" required>
+            </div>
+        </div>
+    </form>
+
+    <div class="ed-grid m-grid-4 s-grid-2 row-gap" id="cursos"></div>
+
+    <script type="module" src="./scripts/index.js"></script>
+</body>
+
+</html>
